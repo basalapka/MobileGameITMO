@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 920a440eb254ba348915767fd046027a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ClientVisualization: {fileID: 0}
+  m_ClientCharacter: {fileID: 0}
   m_CharacterClass: {fileID: 0}
   m_BrainEnabled: 1
   m_KilledDestroyDelaySeconds: 3

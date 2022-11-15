@@ -1,7 +1,10 @@
 using System;
 using Unity.BossRoom.Gameplay.GameplayObjects.Character;
+using Unity.BossRoom.Gameplay.GameplayObjects;
 using Unity.Netcode;
 using UnityEngine;
+using Unity.BossRoom.Gameplay.GameplayObjects.Character.AI;
+using UnityEngine.UIElements;
 
 namespace Unity.BossRoom.Gameplay.GameplayObjects
 {
@@ -10,15 +13,25 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects
         public event Action<ServerCharacter, int> DamageReceived;
 
         public event Action<Collision> CollisionEntered;
-
+        //private PlayerServerCharacter m_PlayerServerCharacter;
         [SerializeField]
         NetworkLifeState m_NetworkLifeState;
+        
 
         public void ReceiveHP(ServerCharacter inflicter, int HP)
         {
+            //m_PlayerServerCharacter = GetComponent<PlayerServerCharacter>();
+            //var m_activeCharacters = m_PlayerServerCharacter.GetPlayerServerCharacters();
             if (IsDamageable())
             {
+                //ГНОМЫ ЗДЕСЬ ПОБЫВАЛИ
                 DamageReceived?.Invoke(inflicter, HP);
+                foreach (var character in PlayerServerCharacter.GetPlayerServerCharacters())
+                {
+                    if (character != inflicter) {
+                        inflicter.ReceiveHP(character, HP);
+                    }
+                }
             }
         }
 

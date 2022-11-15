@@ -20,7 +20,7 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
     [RequireComponent(typeof(ServerCharacter))]
     public class PlayerServerCharacter : NetworkBehaviour
     {
-        static List<ServerCharacter> s_ActivePlayers = new List<ServerCharacter>();
+        public static List<ServerCharacter> s_ActivePlayers = new List<ServerCharacter>();
 
         [SerializeField]
         ServerCharacter m_CachedServerCharacter;
