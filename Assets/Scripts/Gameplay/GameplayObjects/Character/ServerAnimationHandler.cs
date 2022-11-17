@@ -33,7 +33,7 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
         {
             yield return new WaitForEndOfFrame();
             m_NetworkLifeState.LifeState.OnValueChanged += OnLifeStateChanged;
-            if (m_NetworkLifeState.LifeState.Value != LifeState.Alive)
+            if (m_NetworkLifeState.LifeState.Value != LifeState.Alive || m_NetworkLifeState.LifeState.Value != LifeState.Fainted)
             {
                 OnLifeStateChanged(LifeState.Alive, m_NetworkLifeState.LifeState.Value);
             }
@@ -47,7 +47,8 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
                     NetworkAnimator.SetTrigger(m_VisualizationConfiguration.AliveStateTriggerID);
                     break;
                 case LifeState.Fainted:
-                    NetworkAnimator.SetTrigger(m_VisualizationConfiguration.FaintedStateTriggerID);
+                    //NetworkAnimator.SetTrigger(m_VisualizationConfiguration.FaintedStateTriggerID);
+                    NetworkAnimator.SetTrigger(m_VisualizationConfiguration.AliveStateTriggerID);
                     break;
                 case LifeState.Dead:
                     NetworkAnimator.SetTrigger(m_VisualizationConfiguration.DeadStateTriggerID);

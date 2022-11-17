@@ -221,7 +221,7 @@ namespace Unity.BossRoom.Gameplay.GameState
                     // Every time a player's life state changes to fainted we check to see if game is over
                     if (message.NewLifeState == LifeState.Fainted)
                     {
-                        CheckForGameOver();
+                        //CheckForGameOver();
                     }
 
                     break;

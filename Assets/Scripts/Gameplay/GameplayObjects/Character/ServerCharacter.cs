@@ -93,6 +93,7 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
         /// Returns true if the Character is currently in a state where it can play actions, false otherwise.
         /// </summary>
         public bool CanPerformActions => LifeState == LifeState.Alive;
+        //public bool CanPerformActions => LifeState == LifeState.Alive || LifeState == LifeState.Fainted;
 
         /// <summary>
         /// Character Type. This value is populated during character selection.
@@ -191,7 +192,8 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
         [ServerRpc]
         public void SendCharacterInputServerRpc(Vector3 movementTarget)
         {
-            if (LifeState == LifeState.Alive && !m_Movement.IsPerformingForcedMovement())
+            //здесь движение
+            if ((LifeState == LifeState.Alive) || (LifeState == LifeState.Fainted) && !m_Movement.IsPerformingForcedMovement())
             {
                 // if we're currently playing an interruptible action, interrupt it!
                 if (m_ServerActionPlayer.GetActiveActionInfo(out ActionRequestData data))
@@ -249,7 +251,9 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
                     HitPoints = sessionPlayerData.Value.CurrentHitPoints;
                     if (HitPoints <= 0)
                     {
+                       
                         LifeState = LifeState.Fainted;
+                        
                     }
                 }
             }
@@ -261,7 +265,9 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
         public void PlayAction(ref ActionRequestData action)
         {
             //the character needs to be alive in order to be able to play actions
-            if (LifeState == LifeState.Alive && !m_Movement.IsPerformingForcedMovement())
+            //(LifeState == LifeState.Alive) ||(LifeState == LifeState.Fainted) && !m_Movement.IsPerformingForcedMovement()
+            //тут скиллы и навыки можно отключить
+            if ((LifeState == LifeState.Alive) && !m_Movement.IsPerformingForcedMovement())
             {
                 if (action.CancelMovement)
                 {
@@ -274,7 +280,7 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
 
         void OnLifeStateChanged(LifeState prevLifeState, LifeState lifeState)
         {
-            if (lifeState != LifeState.Alive)
+            if (lifeState != LifeState.Alive || lifeState != LifeState.Fainted)
             {
                 m_ServerActionPlayer.ClearActions(true);
                 m_Movement.CancelMove();
@@ -345,6 +351,15 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
                 }
                 else
                 {
+                    //Debug.Log("ГНОМЫ");
+                    //clientCharacter.CharacterSwap.CharacterModel.head.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+                    foreach (var bodyPart in clientCharacter.CharacterSwap.CharacterModel.GetAllBodyParts())
+                    {
+
+                            bodyPart.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+                        
+
+                    }
                     LifeState = LifeState.Fainted;
                 }
 

@@ -241,7 +241,7 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
         /// </summary>
         float GetVisualMovementSpeed(MovementStatus movementStatus)
         {
-            if (m_ServerCharacter.NetLifeState.LifeState.Value != LifeState.Alive)
+            if (m_ServerCharacter.NetLifeState.LifeState.Value != LifeState.Alive || m_ServerCharacter.NetLifeState.LifeState.Value != LifeState.Fainted)
             {
                 return m_VisualizationConfiguration.SpeedDead;
             }
