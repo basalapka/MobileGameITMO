@@ -29,7 +29,7 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects
                 foreach (var character in PlayerServerCharacter.GetPlayerServerCharacters())
                 {
                     if (character != inflicter) {
-                        inflicter.ReceiveHP(character, HP);
+                        character.ReceiveHP(inflicter, HP);
                     }
                 }
             }

@@ -83,6 +83,7 @@ namespace Unity.BossRoom.Gameplay.UI
                 case CharacterTypeEnum.Tank:
                 case CharacterTypeEnum.Archer:
                 case CharacterTypeEnum.Mage:
+                case CharacterTypeEnum.Gnome:
                 case CharacterTypeEnum.Rogue:
                 case CharacterTypeEnum.ImpBoss:
                     switch (eventMessage.NewLifeState)

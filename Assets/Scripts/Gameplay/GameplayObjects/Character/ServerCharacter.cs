@@ -8,6 +8,7 @@ using Unity.Multiplayer.Samples.BossRoom;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Serialization;
+using static Unity.BossRoom.Gameplay.UserInput.ClientInputSender;
 using Action = Unity.BossRoom.Gameplay.Actions.Action;
 
 namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
@@ -276,6 +277,15 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
 
                 m_ServerActionPlayer.PlayAction(ref action);
             }
+            if ((LifeState == LifeState.Fainted) && !m_Movement.IsPerformingForcedMovement())
+            {
+                if (action.CancelMovement)
+                {
+                    m_Movement.CancelMove();
+                }
+
+                m_ServerActionPlayer.PlayAction(ref action);
+            }
         }
 
         void OnLifeStateChanged(LifeState prevLifeState, LifeState lifeState)
@@ -361,6 +371,20 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
 
                     }
                     LifeState = LifeState.Fainted;
+                    ServerActionPlayer actionPlayer;
+                    //actionPlayer.PlayAction()
+                    //    if (targetNetObj.TryGetComponent<ServerCharacter>(out var serverCharacter))
+                    //{
+                    //    //Skill1 may be contextually overridden if it was generated from a mouse-click.
+                    //    if (actionID == CharacterClass.Skill1.ActionID && triggerStyle == SkillTriggerStyle.MouseClick)
+                    //    {
+                    //        if (!serverCharacter.IsNpc && serverCharacter.LifeState == LifeState.Fainted)
+                    //        {
+                    //            //right-clicked on a downed ally--change the skill play to Revive.
+                    //            actionID = GameDataSource.Instance.ReviveActionPrototype.ActionID;
+                    //        }
+                    //    }
+                    //}
                 }
 
                 m_ServerActionPlayer.ClearActions(false);

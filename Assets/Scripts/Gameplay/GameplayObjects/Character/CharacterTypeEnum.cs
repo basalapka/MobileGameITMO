@@ -13,6 +13,7 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
         Archer,
         Mage,
         Rogue,
+        Gnome,
 
         //monsters
         Imp,
