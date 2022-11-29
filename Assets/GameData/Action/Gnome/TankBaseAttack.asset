@@ -9,18 +9,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc739547e94150344ae64a6d5a9da4e0, type: 3}
-  m_Name: GnomeBaseHeal
+  m_Script: {fileID: 11500000, guid: 62b840a5705be5b4b9c5f9926aafcc85, type: 3}
+  m_Name: TankBaseAttack
   m_EditorClassIdentifier: 
   Config:
-    Logic: 4
-    Amount: -15
-    ManaCost: 10
-    Range: 20
-    DurationSeconds: 0.55
-    ExecTimeSeconds: 0.15
+    Logic: 0
+    Amount: 10
+    ManaCost: 2
+    Range: 2
+    DurationSeconds: 0.65
+    ExecTimeSeconds: 0.3
     EffectDurationSeconds: 0
-    ReuseTimeSeconds: 0.25
+    ReuseTimeSeconds: 0
     AnimAnticipation: AnticipateMove
     Anim: Attack1
     Anim2: 
@@ -33,16 +33,10 @@ MonoBehaviour:
     Radius: 0
     ActionInput: {fileID: 0}
     ActionInterruptible: 0
-    IsInterruptableBy: []
     BlockingMode: 0
-    Projectiles:
-    - ProjectilePrefab: {fileID: 2842198241268549130, guid: 30c420f004b8f6445ad2bdb2addb234a, type: 3}
-      Speed_m_s: 16
-      Range: 20
-      Damage: 5
-      MaxVictims: 1
+    Projectiles: []
     Spawns: []
     IsFriendly: 0
-    Icon: {fileID: 21300000, guid: bc4cecddc32989649b14473d51861c69, type: 3}
-    DisplayedName: Ranged Shot
-    Description: Fire an arrow at a target.
+    Icon: {fileID: 21300000, guid: c545bd0fd28c988429e5f9aa9d5f5979, type: 3}
+    DisplayedName: Battle Hammer
+    Description: A mighty swing of your trusty hammer.

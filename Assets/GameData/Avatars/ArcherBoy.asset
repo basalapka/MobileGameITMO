@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ArcherBoy
   m_EditorClassIdentifier: 
   m_Guid: 6b4b66fe64fb0648a601ceb0e20f371a
-  CharacterClass: {fileID: 11400000, guid: db88eb88b930a224fa45fc4e1f943088, type: 2}
+  CharacterClass: {fileID: 11400000, guid: 16d3eb3da8842764e91be13c537c6ee9, type: 2}
   Graphics: {fileID: 2408587852517914968, guid: 29d0c8c1a1c40274d97718c37b8b1426, type: 3}
   GraphicsCharacterSelect: {fileID: 6394439823337557057, guid: c2d4ed9d4c78ec64d9e2a885efb35de3, type: 3}
   Portrait: {fileID: 21300000, guid: 94f6a790aff553d4ab8c9c243412023c, type: 3}

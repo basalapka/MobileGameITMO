@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1383fc6b0805339469d44c02534fbb30, type: 3}
-  m_Name: Gnome
+  m_Name: Shadow Archer
   m_EditorClassIdentifier: 
   CharacterType: 4
-  Skill1: {fileID: 11400000, guid: 9e75c07edc5727a41b63445ff626e4db, type: 2}
-  Skill2: {fileID: 11400000, guid: c2802721647cf0b49b5171bae773ac63, type: 2}
-  Skill3: {fileID: 0}
+  Skill1: {fileID: 11400000, guid: 6bb7a54035ae54ecdb3659079e2ca02d, type: 2}
+  Skill2: {fileID: 11400000, guid: e5337a36159e240d4bc6f7d22e0e285c, type: 2}
+  Skill3: {fileID: 11400000, guid: 04306d18d41f34bd0a0df0bf2520bb10, type: 2}
   BaseHP: {fileID: 11400000, guid: d94f03bb5cb7163429507898b11e7994, type: 2}
   BaseMana: 100
   Speed: 6
-  IsNpc: 0
+  IsNpc: 1
   DetectRange: 0
-  DisplayedName: GNOME
-  ClassBannerLit: {fileID: 21300000, guid: 3b685d5ba0e7bc44bb122a5c8252668e, type: 3}
+  DisplayedName: SHADOW ARCHER
+  ClassBannerLit: {fileID: 21300000, guid: 7dff3761ce77b954ea946f98d4022c70, type: 3}
   ClassBannerUnlit: {fileID: 21300000, guid: 398025be84a763e4c9438505f0c020aa, type: 3}

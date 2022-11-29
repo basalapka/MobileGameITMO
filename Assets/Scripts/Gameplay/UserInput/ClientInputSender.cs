@@ -308,7 +308,7 @@ namespace Unity.BossRoom.Gameplay.UserInput
                 //Skill1 may be contextually overridden if it was generated from a mouse-click.
                 if (actionID == CharacterClass.Skill1.ActionID && triggerStyle == SkillTriggerStyle.MouseClick)
                 {
-                    if (!serverCharacter.IsNpc && serverCharacter.LifeState == LifeState.Fainted)
+                    if ((!serverCharacter.IsNpc|| serverCharacter.CharacterType == CharacterTypeEnum.Gnome) && serverCharacter.LifeState == LifeState.Fainted)
                     {
                         //right-clicked on a downed ally--change the skill play to Revive.
                         actionID = GameDataSource.Instance.ReviveActionPrototype.ActionID;

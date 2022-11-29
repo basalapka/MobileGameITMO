@@ -144,7 +144,7 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
             m_PositionLerper = new PositionLerper(m_PhysicsWrapper.Transform.position, k_LerpTime);
             m_RotationLerper = new RotationLerper(m_PhysicsWrapper.Transform.rotation, k_LerpTime);
 
-            if (!m_ServerCharacter.IsNpc)
+            if (!m_ServerCharacter.IsNpc|| serverCharacter.CharacterType == CharacterTypeEnum.Gnome)
             {
                 name = "AvatarGraphics" + m_ServerCharacter.OwnerClientId;
 

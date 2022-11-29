@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MageGirl
   m_EditorClassIdentifier: 
   m_Guid: 99b7c225e423db4bb47ace78b6af722e
-  CharacterClass: {fileID: 11400000, guid: b9743318c3216254bb32b815c6edcb7b, type: 2}
+  CharacterClass: {fileID: 11400000, guid: 247b2fd89e6f7ed4cb2baed19395fa3b, type: 2}
   Graphics: {fileID: 2760169324013038984, guid: cd83969f4c2788748a18f10b2cab8f5f, type: 3}
   GraphicsCharacterSelect: {fileID: 6020211377990014347, guid: 33da3b4c3bf91eb41a4cc9a3f9c907dc, type: 3}
   Portrait: {fileID: 21300000, guid: 70182dc50bb8e854882af20d372ec422, type: 3}

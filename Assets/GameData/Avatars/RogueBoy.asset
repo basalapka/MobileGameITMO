@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RogueBoy
   m_EditorClassIdentifier: 
   m_Guid: 1eb8a36812bd384ca2d896f2ba5bca75
-  CharacterClass: {fileID: 11400000, guid: 131bd29e682b4e34aa5c8b1f8ba4a48d, type: 2}
+  CharacterClass: {fileID: 11400000, guid: 4b3b65d6c8ea3c94089150b6612b0061, type: 2}
   Graphics: {fileID: 6329834514286226247, guid: d462455aa2605fc41a44a4f249ec5b5d, type: 3}
   GraphicsCharacterSelect: {fileID: 878901532367110463, guid: 30b2e61172343c74e82b1ddb9e5360f8, type: 3}
   Portrait: {fileID: 21300000, guid: 9781ab5273dea1c4e94c1ab8d4d18b31, type: 3}

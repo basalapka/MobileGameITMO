@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc739547e94150344ae64a6d5a9da4e0, type: 3}
-  m_Name: GnomeBaseAttack
+  m_Name: SA1
   m_EditorClassIdentifier: 
   Config:
-    Logic: 0
-    Amount: 0
-    ManaCost: 20
+    Logic: 4
+    Amount: 15
+    ManaCost: 2
     Range: 20
     DurationSeconds: 0.55
     ExecTimeSeconds: 0.15
@@ -27,13 +27,12 @@ MonoBehaviour:
     ReactAnim: 
     OtherAnimatorVariable: 
     SplashDamage: 0
-    MoveSpeed: 5
+    MoveSpeed: 0
     KnockbackSpeed: 0
     KnockbackDuration: 0
     Radius: 0
     ActionInput: {fileID: 0}
     ActionInterruptible: 0
-    IsInterruptableBy: []
     BlockingMode: 0
     Projectiles:
     - ProjectilePrefab: {fileID: 2842198241268549130, guid: 30c420f004b8f6445ad2bdb2addb234a, type: 3}
@@ -41,9 +40,8 @@ MonoBehaviour:
       Range: 20
       Damage: 5
       MaxVictims: 1
-    Spawns:
-    - {fileID: 3713729372785093424, guid: 6cdd52f1fa2ed34469a487ae6477eded, type: 3}
+    Spawns: []
     IsFriendly: 0
-    Icon: {fileID: 21300000, guid: 78d77642232371343be5eb919ee08ac8, type: 3}
+    Icon: {fileID: 21300000, guid: 81a26dad52a33d44db38d191f7a1b6a0, type: 3}
     DisplayedName: Ranged Shot
     Description: Fire an arrow at a target.

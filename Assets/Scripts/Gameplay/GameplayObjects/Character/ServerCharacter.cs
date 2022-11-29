@@ -160,9 +160,10 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
                 m_DamageReceiver.DamageReceived += ReceiveHP;
                 m_DamageReceiver.CollisionEntered += CollisionEntered;
 
-                if (IsNpc)
+                if (IsNpc /*&& CharacterType != CharacterTypeEnum.Gnome*/)
                 {
-                    m_AIBrain = new AIBrain(this, m_ServerActionPlayer);
+                        m_AIBrain = new AIBrain(this, m_ServerActionPlayer);
+
                 }
 
                 if (m_StartingAction != null)
@@ -244,7 +245,7 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
         {
             HitPoints = CharacterClass.BaseHP.Value;
 
-            if (!IsNpc)
+            if (!IsNpc || CharacterType == CharacterTypeEnum.Gnome)
             {
                 SessionPlayerData? sessionPlayerData = SessionManager<SessionPlayerData>.Instance.GetPlayerData(OwnerClientId);
                 if (sessionPlayerData is { HasCharacterSpawned: true })
@@ -350,7 +351,7 @@ namespace Unity.BossRoom.Gameplay.GameplayObjects.Character
             //that's handled by a separate function.
             if (HitPoints <= 0)
             {
-                if (IsNpc)
+                if (IsNpc /*&& CharacterType != CharacterTypeEnum.Gnome*/)//если раскоментить импы не будут умирать
                 {
                     if (m_KilledDestroyDelaySeconds >= 0.0f && LifeState != LifeState.Dead)
                     {
